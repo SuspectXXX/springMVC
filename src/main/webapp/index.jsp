@@ -11,6 +11,10 @@
     <title>INDEX</title>
 </head>
 <body>
-    <a href="hello/hello">TO SUCCESS</a>
+    <a href="hello/hello">TO SUCCESS</a><br/>
+
+    <a href="test01/100">测试@PathVariable1</a><br/>
+
+    <a href="100/test02">测试@PathVariable2</a><br/>
 </body>
 </html>
