@@ -39,5 +39,10 @@
     <a href="handle02?name=kk">handle02</a><br/>
     <a href="handle03?name=kk">handle03</a><br/>
     <a href="handle04">handle04</a><br/>
+
+    <a href="map">Map</a><br/>
+    <a href="model">Model</a><br/>
+    <a href="modelMap">ModelMap</a><br/>
+    <a href="modelAndView">ModelAndView</a><br/>
 </body>
 </html>
