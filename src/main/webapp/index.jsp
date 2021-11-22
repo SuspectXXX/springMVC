@@ -16,5 +16,7 @@
     <a href="test01/100">测试@PathVariable1</a><br/>
 
     <a href="100/test02">测试@PathVariable2</a><br/>
+
+    <a href="100">测试@PathVariable3</a><br/>
 </body>
 </html>

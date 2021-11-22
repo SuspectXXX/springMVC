@@ -19,4 +19,10 @@ public class PathVariableController {
         return "success";
     }
 
+    @RequestMapping("/{id}")
+    public String test03(@PathVariable("id") String uId) {
+        System.out.println("test03 + " + uId);
+        return "success";
+    }
+
 }
