@@ -11,6 +11,8 @@
     <title>OUTPUT</title>
 </head>
 <body>
+    <%--${pageContext.request.contextPath}--%>
+    <%--<br/>--%>
     ${requestScope.msg}
 </body>
 </html>
