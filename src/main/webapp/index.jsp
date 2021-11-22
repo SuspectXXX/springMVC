@@ -34,5 +34,10 @@
         <input name="_method" value="put" hidden/>
         <input type="submit" value="更新图书"/>
     </form>
+
+    <a href="handle01?name=kk">handle01</a><br/>
+    <a href="handle02?name=kk">handle02</a><br/>
+    <a href="handle03?name=kk">handle03</a><br/>
+    <a href="handle04">handle04</a><br/>
 </body>
 </html>
