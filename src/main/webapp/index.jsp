@@ -44,5 +44,8 @@
     <a href="model">Model</a><br/>
     <a href="modelMap">ModelMap</a><br/>
     <a href="modelAndView">ModelAndView</a><br/>
+    <br/>
+    <a href="test/test01">test01</a>
+    <a href="test/test03">test03</a>
 </body>
 </html>
