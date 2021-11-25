@@ -1,17 +1,46 @@
 package com.kk.bean;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
+import javax.validation.constraints.Email;
+import java.util.Date;
+
 public class Employee {
 
 	private Integer id;
 	private String lastName;
 
+	@Email
 	private String email;
 	//1 male, 0 female
 	private Integer gender;
 	
 	private Department department;
-	
-	public Integer getId() {
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date birth;
+
+	@NumberFormat(pattern = "#,###,###.##")
+	private Float salary;
+
+    public Date getBirth() {
+        return birth;
+    }
+
+    public void setBirth(Date birth) {
+        this.birth = birth;
+    }
+
+    public Float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Float salary) {
+        this.salary = salary;
+    }
+
+    public Integer getId() {
 		return id;
 	}
 

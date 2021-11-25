@@ -55,6 +55,8 @@
 	gender：  <br/>
 		男：<input type="radio" name="gender" value="1"/><br/>
 		女：<input type="radio" name="gender" value="0"><br/>
+	birth:<input type="text" name="birth"/>
+	salary:<input type="text" name="salary"/>
 	dept:
 		<select name="department.id">
 			<c:forEach items="${depts }" var="deptItem">

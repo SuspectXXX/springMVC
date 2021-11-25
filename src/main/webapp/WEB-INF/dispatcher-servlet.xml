@@ -13,6 +13,16 @@
     </bean>
 
     <mvc:default-servlet-handler />
-    <mvc:annotation-driven />
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
     <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.kk.config.StringToEmployeeConverter"></bean>
+            </set>
+        </property>
+    </bean>
+
+
 </beans>

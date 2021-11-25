@@ -7,10 +7,13 @@ import com.kk.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 @Controller
@@ -37,7 +40,8 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/emp", method = RequestMethod.POST)
-    public String addEmp(Employee employee) {
+    public String addEmp(@Valid Employee employee, BindingResult bindingResult) {
+        System.out.println(bindingResult);
         employeeDao.save(employee);
         return "redirect:/emps";
     }
@@ -64,6 +68,13 @@ public class EmployeeController {
     @RequestMapping(value = "/emp/{id}", method = RequestMethod.DELETE)
     public String deleteEmp(@PathVariable("id") Integer id) {
         employeeDao.delete(id);
+        return "redirect:/emps";
+    }
+
+    @RequestMapping("/quickAdd")
+    public String quickAdd(@RequestParam("empInfo") Employee employee) {
+        System.out.println(employee);
+        employeeDao.save(employee);
         return "redirect:/emps";
     }
 

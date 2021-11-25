@@ -13,6 +13,8 @@
 			<th>ID</th>
 			<th>lastName</th>
 			<th>email</th>
+			<th>birth</th>
+			<th>salary</th>
 			<th>gender</th>
 			<th>departmentName</th>
 			<th>EDIT</th>
@@ -23,6 +25,8 @@
 				<td>${emp.id }</td>
 				<td>${emp.lastName}</td>
 				<td>${emp.email }</td>
+				<td>${emp.birth }</td>
+				<td>${emp.salary }</td>
 				<td>${emp.gender==0?"女":"男" }</td>
 				<td>${emp.department.departmentName }</td>
 				<td><a href="${pageContext.request.contextPath}/emp/${emp.id }">edit</a></td>
@@ -31,6 +35,10 @@
 		</c:forEach>
 	</table>
 	<a href="${pageContext.request.contextPath}/toaddpage">添加员工</a>
+	<form action="${pageContext.request.contextPath}/quickAdd" method="post">
+		<input name="empInfo" value="empAdmin-admin@163.com-1-101"/>
+		<input type="submit" value="快速添加"/>
+	</form>
 
 	<form id="deleteForm" method="post">
 		<input type="hidden" name="_method" value="delete" />
