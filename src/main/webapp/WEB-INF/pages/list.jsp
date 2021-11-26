@@ -39,6 +39,9 @@
 		<input name="empInfo" value="empAdmin-admin@163.com-1-101"/>
 		<input type="submit" value="快速添加"/>
 	</form>
+    <a href="${pageContext.request.contextPath}/json1" id="json1">AJAX1</a>
+    <a href="${pageContext.request.contextPath}/json2" id="json2">AJAX2</a>
+    <a href="${pageContext.request.contextPath}/json3" id="json3">AJAX3</a>
 
 	<form id="deleteForm" method="post">
 		<input type="hidden" name="_method" value="delete" />
@@ -55,6 +58,47 @@
                 }
 				return false;
 			});
+
+			$("#json1").click(function () {
+                $.ajax({
+                    url:"${pageContext.request.contextPath}/json1",
+                    type:"GET",
+                    success:function (data) {
+                        console.log(data);
+                        //console.log(data[0].id);
+                    }
+                });
+                return false;
+            });
+
+            $("#json2").click(function () {
+                $.ajax({
+                    url:"${pageContext.request.contextPath}/json2",
+                    type:"GET",
+                    success:function (data) {
+                        console.log(data);
+                        var response = JSON.parse(data);
+                        console.log(response);
+                        console.log(response[0].id);
+                    }
+                });
+                return false;
+            });
+
+            $("#json3").click(function () {
+                var test = {name:"张三",age:18};
+                var testStr = JSON.stringify(test);
+                $.ajax({
+                    url:"${pageContext.request.contextPath}/json3",
+                    type:"POST",
+                    contentType:"application/json",
+                    data:testStr,
+                    success:function (data) {
+                        console.log(data);
+                    }
+                });
+                return false;
+            });
 		});
 	</script>
 </body>
